@@ -39,6 +39,9 @@
   --bubble-border-radius: 18px;
   --input-field-border-radius: 25px;
   --button-border-radius: 25px;
+
+  /* NOVO: Altura mínima do textarea */
+  --textarea-min-height: 40px; /* Adapte conforme a altura desejada para 1 linha */
 }
 
 body {
@@ -126,10 +129,10 @@ body {
   padding: 15px 20px;
   border-top: 1px solid var(--border-color);
   background-color: var(--bot-bubble-bg);
-  align-items: center;
+  align-items: flex-end;
 }
 
-.chat-input-container input[type="text"] {
+.chat-input-container textarea {
   flex-grow: 1;
   padding: 12px 18px;
   border: 1px solid var(--input-border-color);
@@ -137,10 +140,15 @@ body {
   font-size: var(--input-font-size);
   outline: none;
   color: var(--text-color);
+  resize: none;
+  min-height: var(--textarea-min-height);
+  overflow-y: hidden;
+  line-height: 1.4;
+  box-sizing: border-box;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.chat-input-container input[type="text"]:focus {
+.chat-input-container textarea:focus {
   border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
 }

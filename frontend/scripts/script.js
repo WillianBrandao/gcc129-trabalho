@@ -19,6 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
 
+  function autoResizeTextarea() {
+    userInput.style.height = "auto";
+    userInput.style.height = userInput.scrollHeight + 2 + "px";
+  }
+
   // Função para enviar a mensagem
   async function sendMessage() {
     const messageText = userInput.value.trim();
@@ -26,6 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     addMessage(messageText, "user");
     userInput.value = "";
+
+    //Resetar a altura do textarea após o envio da mensagem
+    userInput.style.height = "auto";
 
     try {
       // Substituir URL DA API
@@ -57,10 +65,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // Evento para o botão de envio
   sendButton.addEventListener("click", sendMessage);
 
-  // Evento para a tecla Enter no campo de entrada
+  // Permite que Enter sozinho envie a mensagem, e Shift+Enter crie uma nova linha
   userInput.addEventListener("keypress", (event) => {
-    if (event.key === "Enter") {
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault();
       sendMessage();
     }
   });
+
+  userInput.addEventListener("input", autoResizeTextarea);
+
+  autoResizeTextarea();
 });
