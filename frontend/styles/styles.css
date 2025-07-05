@@ -181,10 +181,9 @@ body {
   margin: 10px 0;
 }
 
-
 /* efeito de “loading” no botão */
 .chat-input-container button.loading {
-  background-color: #66b3ff;      /* azul‑claro */
+  background-color: #66b3ff; /* azul‑claro */
   cursor: default;
 }
 
@@ -193,7 +192,7 @@ body {
   display: inline-block;
   width: 0.9em;
   height: 0.9em;
-  border: 2px solid rgba(255,255,255,0.6);
+  border: 2px solid rgba(255, 255, 255, 0.6);
   border-top-color: white;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
@@ -201,6 +200,7 @@ body {
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
-
