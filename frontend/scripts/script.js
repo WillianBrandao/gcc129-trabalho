@@ -3,11 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const userInput = document.getElementById("user-input");
   const sendButton = document.getElementById("send-button");
 
-  // Função para adicionar uma mensagem ao chat
+  let idSessao = null; // guarda o id da sessão retornado pelo backend
+
   function addMessage(text, sender) {
     const messageDiv = document.createElement("div");
-    messageDiv.classList.add("message");
-    messageDiv.classList.add(`${sender}-message`);
+    messageDiv.classList.add("message", `${sender}-message`);
 
     const paragraph = document.createElement("p");
     paragraph.textContent = text;
@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
     messageDiv.appendChild(paragraph);
     chatMessages.appendChild(messageDiv);
 
-    // Rolar para a última mensagem
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
 
@@ -24,35 +23,33 @@ document.addEventListener("DOMContentLoaded", () => {
     userInput.style.height = userInput.scrollHeight + 2 + "px";
   }
 
-  // Função para enviar a mensagem
   async function sendMessage() {
-    const messageText = userInput.value.trim();
-    if (messageText === "") return;
+    const textoMensagem = userInput.value.trim();
+    if (textoMensagem === "") return;
 
-    addMessage(messageText, "user");
+    addMessage(textoMensagem, "user");
     userInput.value = "";
-
-    //Resetar a altura do textarea após o envio da mensagem
-    userInput.style.height = "auto";
+    userInput.style.height = "auto"; 
 
     try {
-      // Substituir URL DA API
-      const response = await fetch("http://localhost:8000/chat", {
+      const resposta = await fetch("http://localhost:8000/perguntar", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ message: messageText }),
+        body: JSON.stringify({ pergunta: textoMensagem, id_sessao: idSessao }),
       });
 
-      if (!response.ok) {
-        throw new Error(`Erro HTTP! Status: ${response.status}`);
+      if (!resposta.ok) {
+        throw new Error(`Erro HTTP! Status: ${resposta.status}`);
       }
 
-      const data = await response.json();
-      const botResponseText =
-        data.response || "Desculpe, não consegui processar sua solicitação.";
-      addMessage(botResponseText, "bot");
+      const dados = await resposta.json();
+      idSessao = dados.id_sessao; // atualiza o id da sessão
+
+      const textoResposta = dados.resposta || "Desculpe, não consegui processar sua solicitação.";
+      addMessage(textoResposta, "bot");
+
     } catch (error) {
       console.error("Erro ao comunicar com o backend:", error);
       addMessage(
@@ -62,10 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Evento para o botão de envio
   sendButton.addEventListener("click", sendMessage);
 
-  // Permite que Enter sozinho envie a mensagem, e Shift+Enter crie uma nova linha
   userInput.addEventListener("keypress", (event) => {
     if (event.key === "Enter" && !event.shiftKey) {
       event.preventDefault();
