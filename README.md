@@ -58,7 +58,7 @@ Com base na constatação dessa demanda, nosso grupo se propos a desenvolver um 
   <!-- RAGFlow SDK -->
   <tr>
     <td style="padding: 8px; text-align: center;">
-      <img alt="Ragflow" height="10" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.marktechpost.com%2F2024%2F04%2F06%2Fmeet-ragflow-an-open-source-rag-retrieval-augmented-generation-engine-based-on-deep-document-understanding%2F&psig=AOvVaw1cIB3_F3w9Ty96xSJSdGtM&ust=1751840190560000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPDcpbbfpo4DFQAAAAAdAAAAABAE" />
+      <img alt="Ragflow" height="10" src="https://www.marktechpost.com/wp-content/uploads/2024/04/Screenshot-2024-04-06-at-12.23.11-AM.png" />
     </td>
     <td style="padding: 8px;">RAGFlow SDK</td>
     <td style="padding: 8px;">Integração com Assistente IA</td>
