@@ -20,9 +20,9 @@ Com base na constatação dessa demanda, nosso grupo se propos a desenvolver um 
   <!-- Front-end -->
   <tr>
     <td style="padding: 8px; text-align: center;">
-      <img alt="HTML" height="10" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" />
-      <img alt="CSS" height="10" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" />
-      <img alt="JavaScript" height="10" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" />
+      <img alt="HTML" height="30" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" />
+      <img alt="CSS" height="30" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" />
+      <img alt="JavaScript" height="30" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" />
     </td>
     <td style="padding: 8px;">HTML5, CSS3 & JavaScript</td>
     <td style="padding: 8px;">Front-End</td>
@@ -31,7 +31,7 @@ Com base na constatação dessa demanda, nosso grupo se propos a desenvolver um 
   <!-- Back-end -->
   <tr>
     <td style="padding: 8px; text-align: center;">
-      <img alt="Python" height="10" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" />
+      <img alt="Python" height="30" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" />
     </td>
     <td style="padding: 8px;">Python 3.13</td>
     <td style="padding: 8px;">Back-End</td>
@@ -40,7 +40,7 @@ Com base na constatação dessa demanda, nosso grupo se propos a desenvolver um 
   <!-- FastAPI -->
   <tr>
     <td style="padding: 8px; text-align: center;">
-      <img alt="FastAPI" height="10" src="https://fastapi.tiangolo.com/img/icon-white.svg" />
+      <img alt="FastAPI" height="30" width="30" src="https://fastapi.tiangolo.com/img/icon-white.svg" />
     </td>
     <td style="padding: 8px;">FastAPI</td>
     <td style="padding: 8px;">API REST</td>
@@ -49,7 +49,7 @@ Com base na constatação dessa demanda, nosso grupo se propos a desenvolver um 
   <!-- Uvicorn -->
   <tr>
     <td style="padding: 8px; text-align: center;">
-      <img alt="Uvicorn" height="10" src="https://avatars.githubusercontent.com/u/51670903?s=200&v=4" />
+      <img alt="Uvicorn" height="30" width="30" src="https://avatars.githubusercontent.com/u/51670903?s=200&v=4" />
     </td>
     <td style="padding: 8px;">Uvicorn</td>
     <td style="padding: 8px;">ASGI Server</td>
@@ -58,7 +58,7 @@ Com base na constatação dessa demanda, nosso grupo se propos a desenvolver um 
   <!-- RAGFlow SDK -->
   <tr>
     <td style="padding: 8px; text-align: center;">
-      <img alt="Ragflow" height="10" src="https://www.marktechpost.com/wp-content/uploads/2024/04/Screenshot-2024-04-06-at-12.23.11-AM.png" />
+      <img alt="Ragflow" height="30" width="30" src="https://www.marktechpost.com/wp-content/uploads/2024/04/Screenshot-2024-04-06-at-12.23.11-AM.png" />
     </td>
     <td style="padding: 8px;">RAGFlow SDK</td>
     <td style="padding: 8px;">Integração com Assistente IA</td>
@@ -67,7 +67,7 @@ Com base na constatação dessa demanda, nosso grupo se propos a desenvolver um 
   <!-- Ambiente Virtual -->
   <tr>
     <td style="padding: 8px; text-align: center;">
-      <img alt="Python venv" height="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" />
+      <img alt="Python venv" height="30" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" />
     </td>
     <td style="padding: 8px;">Python venv</td>
     <td style="padding: 8px;">Ambiente Isolado</td>
@@ -95,9 +95,9 @@ O projeto terá a seguinte estrutura:
   |   └─── index.html
   |
   ├─── Documentação Arquitetonica
-  │   ├───
-  │   ├───
-  |   └───
+  │   ├───Visão Arquitetônica Inicial
+  │   ├───Modelagem de Ameaças
+  |   └───Visão Arquitetônica Final e Mitigações
   └─── README.md
 
 ```
@@ -161,7 +161,7 @@ Acesse http://localhost:8000 no navegador para interagir com o chatbot.
 
   ## DESENVOLVEDORES
 
-  - [Ada]()
-  - [Gabriel]()
+  - [Ada](https://github.com/)
+  - [Gabriel](https://github.com/i-am-Gab)
   - [Ronan](https://github.com/carlettoronan)
   - [Willian Brandão](https://github.com/WillianBrandao)
