@@ -3,7 +3,7 @@ from fastapi import FastAPI
 import os
 
 # Instância do FastAPI
-app = FastAPI(title="Servico‑Uflianinho")
+app = FastAPI(title="Servico‑Uflinho")
 
 # CORS
 origens_permitidas = [

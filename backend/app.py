@@ -30,12 +30,17 @@ def get_assistente():
     with rag_lock:
         if assistente is None:
             logger.info("🔌 Conectando ao RAGFlow...")
-            rag = RAGFlow(api_key=CHAVE_API_RAG, base_url=URL_BASE_RAG)
-            lista = rag.list_chats(name=NOME_ASSISTENTE)
-            if not lista:
-                raise RuntimeError(f"Assistente '{NOME_ASSISTENTE}' não encontrado.")
-            assistente = lista[0]
-            logger.info("✅ Assistente conectado.")
+            try:
+                rag = RAGFlow(api_key=CHAVE_API_RAG, base_url=URL_BASE_RAG)
+                lista = rag.list_chats(name=NOME_ASSISTENTE)
+                if not lista:
+                    raise RuntimeError(f"Assistente '{NOME_ASSISTENTE}' não encontrado.")
+                assistente = lista[0]
+                logger.info("✅ Assistente conectado.")
+            except Exception as e:
+                logger.error(f"❌ Falha ao conectar com o assistente '{NOME_ASSISTENTE}': {e}")
+                # Lança exceção para ser tratada na rota
+                raise RuntimeError(f"Erro ao inicializar o assistente: {e}")
         return assistente
 
 # ---------- MODELOS ----------
@@ -55,12 +60,12 @@ async def perguntar(dados: PerguntaEntrada):
     logger.info(f"👤 Pergunta recebida: {dados.pergunta!r}")
     id_sessao = dados.id_sessao or str(uuid.uuid4())
 
-    # Cria a sessão só se ela ainda não existir
-    if id_sessao not in sessoes:
-        logger.info(f"🆕 Criando nova sessão: {id_sessao}")
-        sessoes[id_sessao] = get_assistente().create_session(dados.pergunta)
-
     try:
+        # Cria a sessão só se ela ainda não existir
+        if id_sessao not in sessoes:
+            logger.info(f"🆕 Criando nova sessão: {id_sessao}")
+            sessoes[id_sessao] = get_assistente().create_session(dados.pergunta)
+
         resposta = ""
         logger.info(f"🆕 Gerando resposta...")
         for parte in sessoes[id_sessao].ask(dados.pergunta, stream=False):
@@ -73,7 +78,8 @@ async def perguntar(dados: PerguntaEntrada):
 
     except Exception as erro:
         logger.exception("❌ Erro ao obter resposta:")
-        raise HTTPException(status_code=500, detail=str(erro))
+        # Retorna o erro para o frontend
+        raise HTTPException(status_code=500, detail=str(erro))      
     
 
 # ---------- FRONTEND --------------

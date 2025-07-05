@@ -77,7 +77,20 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: { "Content-Type": "application/json" },
         body   : JSON.stringify({ pergunta: texto, id_sessao: idSessao }),
       });
-      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+
+      if (!resp.ok) {
+        // tenta pegar mensagem do erro no JSON
+        let errorMsg = `HTTP ${resp.status}`;
+        try {
+          const errJson = await resp.json();
+          if (errJson.detail) {
+            errorMsg = errJson.detail;
+          }
+        } catch (_) {
+          // se não conseguir ler JSON, mantém errorMsg padrão
+        }
+        throw new Error(errorMsg);
+      }
 
       const dados = await resp.json();
       idSessao = dados.id_sessao;
@@ -85,13 +98,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     } catch (e) {
       console.error(e);
-      addMessage("Ops! Ocorreu um erro. Tente novamente mais tarde.", "bot");
+      // aqui exibe a mensagem que veio do backend ou genérica
+      addMessage(e.message || "Ops! Ocorreu um erro. Tente novamente mais tarde.", "bot");
     } finally {
       removeStatus();
       unlockButton();
       userInput.focus();
     }
-  }
+}
 
   /* ---------- eventos ---------- */
   sendButton.addEventListener("click", sendMessage);
