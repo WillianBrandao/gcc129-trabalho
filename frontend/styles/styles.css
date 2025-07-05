@@ -173,3 +173,34 @@ body {
 .chat-input-container button:active {
   transform: translateY(1px);
 }
+
+.status-message {
+  text-align: left;
+  color: gray;
+  font-style: italic;
+  margin: 10px 0;
+}
+
+/* efeito de “loading” no botão */
+.chat-input-container button.loading {
+  background-color: #66b3ff; /* azul‑claro */
+  cursor: default;
+}
+
+/* spinner simples usando animação de borda */
+.chat-input-container button .spinner {
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
