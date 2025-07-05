@@ -16,7 +16,7 @@ Um **API Gateway** foi introduzido como o único ponto de entrada para todas as 
 -   **Rate Limiting**: Limitar o número de requisições para mitigar ataques de Negação de Serviço (DoS).
 -   **Roteamento Centralizado**: Encaminhar as requisições para o microserviço de Backend.
 -   **Offloading de SSL/TLS**: Gerenciar a criptografia da comunicação externa (HTTPS).
--   > ⚠️ **Nota**: No ambiente atual de desenvolvimento, as chamadas são feitas via `fetch` para `http://localhost`, o que inviabiliza o uso de HTTPS. Como este sistema não está exposto publicamente e está em ambiente controlado, optou-se por não configurar certificados SSL locais. No entanto, em um cenário de produção, o offloading de SSL/TLS seria essencial para garantir a confidencialidade dos dados trafegados entre o navegador e a aplicação.
+-   > **Nota**: No ambiente atual de desenvolvimento, as chamadas são feitas via `fetch` para `http://localhost`, o que inviabiliza o uso de HTTPS. Como este sistema não está exposto publicamente e está em ambiente controlado, optou-se por não configurar certificados SSL locais. No entanto, em um cenário de produção, o offloading de SSL/TLS seria essencial para garantir a confidencialidade dos dados trafegados entre o navegador e a aplicação.
 
 ### 3.2.2. Segurança na Comunicação Interna com mTLS
 
