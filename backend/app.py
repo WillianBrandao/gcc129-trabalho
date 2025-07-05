@@ -1,18 +1,30 @@
-from backend.config import app, CHAVE_API_RAG, URL_BASE_RAG, NOME_ASSISTENTE
+from backend.config.config import app, CHAVE_API_RAG, URL_BASE_RAG, NOME_ASSISTENTE
 from fastapi import HTTPException
 from pydantic import BaseModel
 from ragflow_sdk import RAGFlow
 import uuid
 import threading
 import logging
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import HTMLResponse
+from fastapi import Request
+import os
 
+
+# Configuração do logger
 logger = logging.getLogger("uvicorn.error")
 
+# Configuração do FastAPI para o frontend
+app.mount("/styles", StaticFiles(directory="frontend/styles"), name="styles")
+app.mount("/scripts", StaticFiles(directory="frontend/scripts"), name="scripts")
+
+# Inicialização do RAGFlow e assistente
 rag_lock = threading.Lock()
 rag = None
 assistente = None
 sessoes: dict[str, any] = {}
 
+# Função que instancia a conexão com o Ragflow
 def get_assistente():
     global rag, assistente
     with rag_lock:
@@ -35,7 +47,9 @@ class RespostaSaida(BaseModel):
     resposta: str
     id_sessao: str
 
-# ---------- ROTA --------------
+# ---------- ROTAS --------------
+
+# Rota para perguntar ao assistente
 @app.post("/perguntar", response_model=RespostaSaida)
 async def perguntar(dados: PerguntaEntrada):
     logger.info(f"👤 Pergunta recebida: {dados.pergunta!r}")
@@ -60,3 +74,11 @@ async def perguntar(dados: PerguntaEntrada):
     except Exception as erro:
         logger.exception("❌ Erro ao obter resposta:")
         raise HTTPException(status_code=500, detail=str(erro))
+    
+
+# ---------- FRONTEND --------------
+# Retorna o HTML do frontend
+@app.get("/", response_class=HTMLResponse)
+async def serve_frontend(request: Request):
+    with open(os.path.join("frontend", "index.html"), encoding="utf-8") as f:
+        return HTMLResponse(content=f.read(), status_code=200)
