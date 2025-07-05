@@ -58,7 +58,7 @@ Com base na constatação dessa demanda, nosso grupo se propos a desenvolver um 
   <!-- RAGFlow SDK -->
   <tr>
     <td style="padding: 8px; text-align: center;">
-      <img alt="Ragflow" height="30" width="30" src="https://www.marktechpost.com/wp-content/uploads/2024/04/Screenshot-2024-04-06-at-12.23.11-AM.png" />
+      <img alt="Ragflow" height="90" width="90" src="https://www.marktechpost.com/wp-content/uploads/2024/04/Screenshot-2024-04-06-at-12.23.11-AM.png" />
     </td>
     <td style="padding: 8px;">RAGFlow SDK</td>
     <td style="padding: 8px;">Integração com Assistente IA</td>
@@ -161,7 +161,7 @@ Acesse http://localhost:8000 no navegador para interagir com o chatbot.
 
   ## DESENVOLVEDORES
 
-  - [Ada](https://github.com/)
+  - [Ada](https://github.com/AdaVitoria)
   - [Gabriel](https://github.com/i-am-Gab)
   - [Ronan](https://github.com/carlettoronan)
   - [Willian Brandão](https://github.com/WillianBrandao)
