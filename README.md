@@ -20,9 +20,9 @@ Com base na constatação dessa demanda, nosso grupo se propos a desenvolver um 
   <!-- Front-end -->
   <tr>
     <td style="padding: 8px; text-align: center;">
-      <img alt="HTML" height="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" />
-      <img alt="CSS" height="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" />
-      <img alt="JavaScript" height="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" />
+      <img alt="HTML" height="10" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" />
+      <img alt="CSS" height="10" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" />
+      <img alt="JavaScript" height="10" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" />
     </td>
     <td style="padding: 8px;">HTML5, CSS3 & JavaScript</td>
     <td style="padding: 8px;">Front-End</td>
@@ -31,7 +31,7 @@ Com base na constatação dessa demanda, nosso grupo se propos a desenvolver um 
   <!-- Back-end -->
   <tr>
     <td style="padding: 8px; text-align: center;">
-      <img alt="Python" height="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" />
+      <img alt="Python" height="10" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" />
     </td>
     <td style="padding: 8px;">Python 3.13</td>
     <td style="padding: 8px;">Back-End</td>
@@ -40,7 +40,7 @@ Com base na constatação dessa demanda, nosso grupo se propos a desenvolver um 
   <!-- FastAPI -->
   <tr>
     <td style="padding: 8px; text-align: center;">
-      <img alt="FastAPI" height="30" src="https://fastapi.tiangolo.com/img/icon-white.svg" />
+      <img alt="FastAPI" height="10" src="https://fastapi.tiangolo.com/img/icon-white.svg" />
     </td>
     <td style="padding: 8px;">FastAPI</td>
     <td style="padding: 8px;">API REST</td>
@@ -49,7 +49,7 @@ Com base na constatação dessa demanda, nosso grupo se propos a desenvolver um 
   <!-- Uvicorn -->
   <tr>
     <td style="padding: 8px; text-align: center;">
-      <img alt="Uvicorn" height="30" src="https://avatars.githubusercontent.com/u/51670903?s=200&v=4" />
+      <img alt="Uvicorn" height="10" src="https://avatars.githubusercontent.com/u/51670903?s=200&v=4" />
     </td>
     <td style="padding: 8px;">Uvicorn</td>
     <td style="padding: 8px;">ASGI Server</td>
@@ -58,7 +58,7 @@ Com base na constatação dessa demanda, nosso grupo se propos a desenvolver um 
   <!-- RAGFlow SDK -->
   <tr>
     <td style="padding: 8px; text-align: center;">
-      🤖
+      <img alt="Ragflow" height="10" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.marktechpost.com%2F2024%2F04%2F06%2Fmeet-ragflow-an-open-source-rag-retrieval-augmented-generation-engine-based-on-deep-document-understanding%2F&psig=AOvVaw1cIB3_F3w9Ty96xSJSdGtM&ust=1751840190560000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPDcpbbfpo4DFQAAAAAdAAAAABAE" />
     </td>
     <td style="padding: 8px;">RAGFlow SDK</td>
     <td style="padding: 8px;">Integração com Assistente IA</td>
@@ -118,20 +118,24 @@ git clone https://github.com/seu-usuario/gcc129-trabalho.git
 cd gcc129-trabalho
 
 #2. Crie um ambiente virtual
+
 python -m venv venv
 venv\Scripts\activate     # Windows
 source venv/bin/activate  # Linux/macOS
 
 #3. Instale as dependências
+
 pip install -r requirements.txt
 
 #4. Ajuste as variáveis de ambiente
-Acesse o diretório backend/config/config.py
+#Acesse o diretório backend/config/config.py
+
 CHAVE_API_RAG = "ragflow-..."       # sua chave de API da RAGFlow
 URL_BASE_RAG = "http://localhost"   # base URL do servidor RAGFlow
 NOME_ASSISTENTE = "Uflianinho"      # nome do assistente configurado]
 
 #5. Executando o servidor
+
 uvicorn backend.app:app --host 0.0.0.0 --port 8000 --reload
 
 Acesse http://localhost:8000 no navegador para interagir com o chatbot.
