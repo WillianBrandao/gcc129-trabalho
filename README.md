@@ -67,7 +67,7 @@ Com base na constatação dessa demanda, nosso grupo se propos a desenvolver um 
   <!-- Ollama -->
 <tr>
   <td style="padding: 8px; text-align: center;">
-    <img alt="Ollama" height="30" width="30" src="https://ollama.com/public/favicon-32x32.png" />
+    <img alt="Ollama" height="60" width="60" src="https://img.utdstc.com/icon/6f9/ee0/6f9ee044146aecfd841c98f2a270d996b3e33440142456b9b4349c8bc681857c:200" />
   </td>
   <td style="padding: 8px;">Ollama</td>
   <td style="padding: 8px;">Execução local de modelos LLM</td>
