@@ -25,9 +25,55 @@ Com base na constatação dessa demanda, nosso grupo se propos a desenvolver um 
       <img alt="JavaScript" height="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" />
     </td>
     <td style="padding: 8px;">HTML5, CSS3 & JavaScript</td>
-    <td style="padding: 8px;">FrontEnd</td>
+    <td style="padding: 8px;">Front-End</td>
+  </tr>
+
+  <!-- Back-end -->
+  <tr>
+    <td style="padding: 8px; text-align: center;">
+      <img alt="Python" height="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" />
+    </td>
+    <td style="padding: 8px;">Python 3.13</td>
+    <td style="padding: 8px;">Back-End</td>
+  </tr>
+
+  <!-- FastAPI -->
+  <tr>
+    <td style="padding: 8px; text-align: center;">
+      <img alt="FastAPI" height="30" src="https://fastapi.tiangolo.com/img/icon-white.svg" />
+    </td>
+    <td style="padding: 8px;">FastAPI</td>
+    <td style="padding: 8px;">API REST</td>
+  </tr>
+
+  <!-- Uvicorn -->
+  <tr>
+    <td style="padding: 8px; text-align: center;">
+      <img alt="Uvicorn" height="30" src="https://avatars.githubusercontent.com/u/51670903?s=200&v=4" />
+    </td>
+    <td style="padding: 8px;">Uvicorn</td>
+    <td style="padding: 8px;">ASGI Server</td>
+  </tr>
+
+  <!-- RAGFlow SDK -->
+  <tr>
+    <td style="padding: 8px; text-align: center;">
+      🤖
+    </td>
+    <td style="padding: 8px;">RAGFlow SDK</td>
+    <td style="padding: 8px;">Integração com Assistente IA</td>
+  </tr>
+
+  <!-- Ambiente Virtual -->
+  <tr>
+    <td style="padding: 8px; text-align: center;">
+      <img alt="Python venv" height="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" />
+    </td>
+    <td style="padding: 8px;">Python venv</td>
+    <td style="padding: 8px;">Ambiente Isolado</td>
   </tr>
 </table>
+
 ## ESTRUTURA DO PROJETO
 
 O projeto terá a seguinte estrutura:
@@ -38,9 +84,9 @@ O projeto terá a seguinte estrutura:
 
 ```
 .
-  ├─── backend
-  │   ├───
-  |   └───
+  ├── backend/
+  ├── app.py
+  └── config.py
   ├─── frontend
   │   ├─── styles
   |   |   └─── styles.css
@@ -50,17 +96,47 @@ O projeto terá a seguinte estrutura:
   |
   ├─── Documentação Arquitetonica
   │   ├───
+  │   ├───
   |   └───
   └─── README.md
 
 ```
-## Documentação Arquitetônica
+## DOCUMENTAÇÃO ARQUITETÔNICA
 
 Toda a análise arquitetônica, modelagem de ameaças e estratégias de mitigação do sistema estão detalhadas nos seguintes documentos:
 
 1.  **[Visão Arquitetônica Inicial](./Documentacao_Arquitetonica/1_Visao_Arquitetonica_Inicial.md)**: Descreve a arquitetura funcional do sistema antes da análise de segurança.
 2.  **[Modelagem de Ameaças](./Documentacao_Arquitetonica/2_Modelagem_de_Ameacas.md)**: Apresenta a análise de riscos e ameaças utilizando a metodologia STRIDE.
 3.  **[Visão Arquitetônica Final e Mitigações](./Documentacao_Arquitetonica/3_Mitigacao_Visao_Arquitetonica_Final.md)**: Detalha a arquitetura aprimorada com os controles de segurança implementados.
+
+## RODADNDO O PROJETO:
+
+```bash
+### 1. Clone o repositório
+
+git clone https://github.com/seu-usuario/gcc129-trabalho.git
+cd gcc129-trabalho
+
+#2. Crie um ambiente virtual
+python -m venv venv
+venv\Scripts\activate     # Windows
+source venv/bin/activate  # Linux/macOS
+
+#3. Instale as dependências
+pip install -r requirements.txt
+
+#4. Ajuste as variáveis de ambiente
+Acesse o diretório backend/config/config.py
+CHAVE_API_RAG = "ragflow-..."       # sua chave de API da RAGFlow
+URL_BASE_RAG = "http://localhost"   # base URL do servidor RAGFlow
+NOME_ASSISTENTE = "Uflianinho"      # nome do assistente configurado]
+
+#5. Executando o servidor
+uvicorn backend.app:app --host 0.0.0.0 --port 8000 --reload
+
+Acesse http://localhost:8000 no navegador para interagir com o chatbot.
+
+```
 
 ## REGRAS DE USO:
 
