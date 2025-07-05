@@ -16,7 +16,7 @@ logger = logging.getLogger("uvicorn.error")
 
 # Configuração do FastAPI para o frontend
 app.mount("/styles", StaticFiles(directory="frontend/styles"), name="styles")
-app.mount("/scripts", StaticFiles(directory="frontend/scripts"), name="scripts")
+app.mount("/scripts", StaticFiles(directory="frontend/scripts"), name="script")
 
 # Inicialização do RAGFlow e assistente
 rag_lock = threading.Lock()

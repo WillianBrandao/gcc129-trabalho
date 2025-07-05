@@ -10,15 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ---------- utilidades ---------- */
   function addMessage(text, sender) {
     const msg = document.createElement("div");
-    msg.classList.add("message", ${sender}-message);
-    msg.innerHTML = <p>${text}</p>;
+    msg.classList.add("message", `${sender}-message`);
+    msg.innerHTML = `<p>${text}</p>`;
     chatMessages.appendChild(msg);
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
 
   function autoResizeTextarea() {
     userInput.style.height = "auto";
-    userInput.style.height = ${userInput.scrollHeight + 2}px;
+    userInput.style.height = `${userInput.scrollHeight + 2}px`;
   }
 
   /* ---------- status (“Aguardando…”) ---------- */
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: { "Content-Type": "application/json" },
         body   : JSON.stringify({ pergunta: texto, id_sessao: idSessao }),
       });
-      if (!resp.ok) throw new Error(HTTP ${resp.status});
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
 
       const dados = await resp.json();
       idSessao = dados.id_sessao;
