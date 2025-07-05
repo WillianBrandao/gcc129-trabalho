@@ -60,7 +60,7 @@ Toda a análise arquitetônica, modelagem de ameaças e estratégias de mitigaç
 
 1.  **[Visão Arquitetônica Inicial](./Documentacao%20Arquitetonica/1_Visao_Arquitetonica_Inicial.md)**: Descreve a arquitetura funcional do sistema antes da análise de segurança.
 2.  **[Modelagem de Ameaças](./Documentacao%20Arquitetonica/2_Modelagem_de_Ameacas.md)**: Apresenta a análise de riscos e ameaças utilizando a metodologia STRIDE.
-3.  **[Visão Arquitetônica Final e Mitigações](./Documentacao%20Arquitetonica/3_Mitigaçcao_Visao_Arquitetonica_Final.md)**: Detalha a arquitetura aprimorada com os controles de segurança implementados.
+3.  **[Visão Arquitetônica Final e Mitigações](./Documentacao%20Arquitetonica/3_Mitigacao_Visao_Arquitetonica_Final.md)**: Detalha a arquitetura aprimorada com os controles de segurança implementados.
 
 ## REGRAS DE USO:
 
