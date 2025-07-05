@@ -64,6 +64,15 @@ Com base na constatação dessa demanda, nosso grupo se propos a desenvolver um 
     <td style="padding: 8px;">Integração com Assistente IA</td>
   </tr>
 
+  <!-- Ollama -->
+<tr>
+  <td style="padding: 8px; text-align: center;">
+    <img alt="Ollama" height="30" width="30" src="https://ollama.com/public/favicon-32x32.png" />
+  </td>
+  <td style="padding: 8px;">Ollama</td>
+  <td style="padding: 8px;">Execução local de modelos LLM</td>
+</tr>
+
   <!-- Ambiente Virtual -->
   <tr>
     <td style="padding: 8px; text-align: center;">
