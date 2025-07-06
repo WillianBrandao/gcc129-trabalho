@@ -123,7 +123,7 @@ Toda a análise arquitetônica, modelagem de ameaças e estratégias de mitigaç
 ```bash
 ### 1. Clone o repositório
 
-git clone https://github.com/seu-usuario/gcc129-trabalho.git
+git clone https://github.com/WillianBrandao/gcc129-trabalho.git
 cd gcc129-trabalho
 
 #2. Crie um ambiente virtual
