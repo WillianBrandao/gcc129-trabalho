@@ -30,6 +30,8 @@ A solução consiste em um sistema distribuído composto pelos seguintes element
 
 O fluxo de dados a seguir descreve como a informação se move através do sistema sem a implementação de controles de segurança avançados.
 
+![DFD do Sistema](../img/DFD.png "DFD do sistema")
+
 1.  **Usuário -> Frontend**: O usuário digita uma pergunta na interface do chat.
 2.  **Frontend -> Backend**: A interface envia a pergunta do usuário para a API do Backend via uma requisição HTTP.
 3.  **Backend -> Agentes de IA**: O Backend determina para qual agente de IA a pergunta deve ser enviada (ou para ambos) e encaminha a requisição.
