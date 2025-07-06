@@ -90,12 +90,16 @@ O projeto terá a seguinte estrutura:
 - Toda parte do front end da aplicação estará organizado na pasta [`frontend`](./frontend/)
 - Toda parte da api de comunicação do sistema estará localizado no [`backend`](./backend/)
 - Toda documentação Arquitetônica estaŕa na pasta [`Documentação Arquitetônica`](./Documentacao_Arquitetonica/)
+- Toda imagem que projeto irá usar estará na pas [`img`](./img/)
 
 ```
 .
-  ├── backend/
-  ├── app.py
-  └── config.py
+  ├── backend
+  │   ├─── config
+  │   │   ├─── config.py
+  |   |   └─── requirements.txt
+  │   ├─── app.py
+  │   └─── code.py
   ├─── frontend
   │   ├─── styles
   |   |   └─── styles.css
@@ -107,6 +111,9 @@ O projeto terá a seguinte estrutura:
   │   ├───Visão Arquitetônica Inicial
   │   ├───Modelagem de Ameaças
   |   └───Visão Arquitetônica Final e Mitigações
+  ├─── img
+  |   └─── DFD.jpeg
+  ├─── ragflow_chats.json
   └─── README.md
 
 ```
@@ -123,7 +130,7 @@ Toda a análise arquitetônica, modelagem de ameaças e estratégias de mitigaç
 ```bash
 ### 1. Clone o repositório
 
-git clone https://github.com/seu-usuario/gcc129-trabalho.git
+git clone https://github.com/WillianBrandao/gcc129-trabalho.git
 cd gcc129-trabalho
 
 #2. Crie um ambiente virtual
