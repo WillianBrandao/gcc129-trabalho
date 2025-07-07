@@ -107,6 +107,7 @@ O projeto terá a seguinte estrutura:
   │   ├───Visão Arquitetônica Inicial
   │   ├───Modelagem de Ameaças
   |   └───Visão Arquitetônica Final e Mitigações
+  ├─── .env.example
   └─── README.md
 
 ```
@@ -137,11 +138,11 @@ source venv/bin/activate  # Linux/macOS
 pip install -r requirements.txt
 
 #4. Ajuste as variáveis de ambiente
-#Acesse o diretório backend/config/config.py
+#Remova o .exmaple do .env e altere os valores das variáveis
 
 CHAVE_API_RAG = "ragflow-..."       # sua chave de API da RAGFlow
 URL_BASE_RAG = "http://localhost"   # base URL do servidor RAGFlow
-NOME_ASSISTENTE = "Uflianinho"      # nome do assistente configurado]
+NOME_ASSISTENTE = "NOME_DO_CHAT"      # nome do assistente configurado]
 
 #5. Executando o servidor
 
