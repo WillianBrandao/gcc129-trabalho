@@ -30,9 +30,13 @@ A solução consiste em um sistema distribuído composto pelos seguintes element
 
 O fluxo de dados a seguir descreve como a informação se move através do sistema sem a implementação de controles de segurança avançados.
 
+![DFD do Sistema](../img/DFD.jpeg "DFD do sistema")
+
 1.  **Usuário -> Frontend**: O usuário digita uma pergunta na interface do chat.
 2.  **Frontend -> Backend**: A interface envia a pergunta do usuário para a API do Backend via uma requisição HTTP.
 3.  **Backend -> Agentes de IA**: O Backend determina para qual agente de IA a pergunta deve ser enviada (ou para ambos) e encaminha a requisição.
 4.  **Agentes de IA -> Backend**: Os agentes de IA processam a pergunta e retornam a resposta para o Backend.
 5.  **Backend -> Frontend**: O Backend formata a resposta e a envia de volta para a interface do usuário.
 6.  **Frontend -> Usuário**: A resposta é exibida para o usuário no chat.
+
+Como a comunicação entre os agentes de IA através do RAG tem fluxo semelhante e estão suscetíveis as mesmas vulnerabilidades, resolvemos condensar a análise deles como apenas Agentes de IA para evitar ficar muito repetitivo.
