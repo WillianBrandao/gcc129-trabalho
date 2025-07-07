@@ -1,17 +1,17 @@
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
+from dotenv import load_dotenv
+from pathlib import Path
 import os
 
 # Instância do FastAPI
 app = FastAPI(title="Servico‑Uflinho")
 
+# Carrega as variáveis de ambiente do arquivo .env
+load_dotenv(dotenv_path=Path(__file__).resolve().parents[2] / ".env")
+
 # CORS
-origens_permitidas = [
-    "http://localhost",
-    "http://localhost:5500",
-    "http://127.0.0.1:5500",
-    "http://localhost:8000"
-]
+origens_permitidas = os.getenv("ALLOWED_ORIGINS").split(",")
 
 app.add_middleware(
     CORSMiddleware,
@@ -22,6 +22,6 @@ app.add_middleware(
 )
 
 # Configurações RAGFlow
-CHAVE_API_RAG = os.getenv("CHAVE_API_RAG", "ragflow-JlNzI3ZTI2NTliYTExZjA4YmYzOWEzYz")
-URL_BASE_RAG = os.getenv("URL_BASE_RAG", "http://localhost")
+CHAVE_API_RAG = os.getenv("CHAVE_API_RAG")
+URL_BASE_RAG = os.getenv("URL_BASE_RAG")
 NOME_ASSISTENTE = "Uflinho"
